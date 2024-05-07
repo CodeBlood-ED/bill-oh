@@ -1,0 +1,20 @@
+<div class="login" *ngIf="!showSignupComponent">
+    <form class="login-format" >
+        <span><b>For sign in please</b></span><br><br>
+        <input type="text" name="email" placeholder="Type your email here!">
+        <input type="password" name="password" placeholder="and password here...">
+
+        <button id="loginbutton" type="submit" (submit)="userSignIn(loginForm)">Login</button><br>
+    </form>
+    <span style="font-size: 14px;">Sign in using</span>
+    <div class="sign-in-options">
+        <span style="font-size: 14px;margin-right: 6px;"><img src="../../../assets/google.png"></span>
+        <span style="font-size: 14px;margin-right: 6px;"><img src="../../../assets/facebook.png"></span>
+        <span style="font-size: 14px;margin-right: 6px;"><img src="../../../assets/twitter.png"></span>
+    </div>
+    <span id="fp"><b>Forgot password?</b></span>
+    <span id="fp" (click)="routeToSignupComponent()"><b>Register here!</b></span>
+</div>
+<div *ngIf="showSignupComponent">
+    <app-signup></app-signup>
+</div>

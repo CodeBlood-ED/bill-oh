@@ -1,0 +1,18 @@
+<div class="signup" *ngIf="!showLoginComponent">
+    <form class="signup-format">
+        <span><b>Let us know about you</b></span><br><br>
+        <input type="text" name="firstname" placeholder="Write your name here"> 
+        <input type="text" name="email" placeholder="Type your email here"> 
+        <input type="password" name="password" placeholder="Set a password">  
+        <input type="password" name="password" placeholder="Confirm password">   
+        <input type="text" name="mobile" placeholder="Put your mobile number"> 
+
+        
+        <div id="signupbutton" type="submit">Sign up</div><br>
+        <span id="agaa" (click)="routeToLogin()"><b>Already got an account?</b></span>
+    </form>
+</div>
+
+<div *ngIf="showLoginComponent">
+    <app-login></app-login>
+</div>

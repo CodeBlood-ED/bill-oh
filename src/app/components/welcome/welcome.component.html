@@ -1,0 +1,17 @@
+<div class="main">
+    <div class="leftpanel">
+        
+    </div>
+    <div class="rightpanel">
+        <div class="buttons" *ngIf="!showLoginComponent && !showSignupComponent">
+            <div id="login" class="primary-button" (click)="showLogin()">Login</div>
+            <div id="signup" class="primary-button" (click)="showSignup()">Sign up</div>
+        </div>
+        <div *ngIf="showLoginComponent">
+            <app-login></app-login>
+        </div>
+        <div *ngIf="showSignupComponent">
+            <app-signup></app-signup>
+        </div>
+    </div>
+</div>
