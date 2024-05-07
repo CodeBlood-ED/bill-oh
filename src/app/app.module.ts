@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BillTemplateComponent } from './components/bill-template/bill-template.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
@@ -25,6 +25,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

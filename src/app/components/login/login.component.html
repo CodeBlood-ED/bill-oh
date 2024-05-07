@@ -1,10 +1,10 @@
 <div class="login" *ngIf="!showSignupComponent">
-    <form class="login-format" >
+    <form class="login-format" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <span><b>For sign in please</b></span><br><br>
-        <input type="text" name="email" placeholder="Type your email here!">
-        <input type="password" name="password" placeholder="and password here...">
+        <input type="text" placeholder="Type your email here!" formControlName="email">
+        <input type="password" placeholder="and password here..." formControlName="password">
 
-        <button id="loginbutton" type="submit" (submit)="userSignIn(loginForm)">Login</button><br>
+        <button type="submit" id="loginbutton">Login</button><br>
     </form>
     <span style="font-size: 14px;">Sign in using</span>
     <div class="sign-in-options">

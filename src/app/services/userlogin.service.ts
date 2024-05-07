@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginObject } from '../models/LoginObject';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,16 @@ export class UserloginService {
     return this.fetchUserProfileHttpInfo(loginDetails);
   }
   fetchUserProfileHttpInfo(loginDetails: LoginObject): Observable<any> {
+    debugger;
     const url = this.basepath+"/company/login";
-    return this.http.post(url,loginDetails);
+    const headers = new HttpHeaders();
+    let params = new HttpParams();
+
+    const requestOptions = {
+      body : loginDetails,
+      headers,
+      params
+    }
+    return this.http.request('POST',url,requestOptions);
   } 
 }

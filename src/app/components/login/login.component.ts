@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginObject } from 'src/app/models/LoginObject';
 import { UserloginService } from 'src/app/services/userlogin.service';
+import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +12,25 @@ export class LoginComponent {
 
   showSignupComponent:boolean=false;
   user = [];
-  loginDetails :any;
+  email = "";
+  password = "";
+  loginDetails = new LoginObject();
 
   public constructor(private userLoginService: UserloginService){}
 
+  loginForm = new FormGroup({
+    email : new FormControl(''),
+    password : new FormControl(''),
+  })
+
   routeToSignupComponent(){
     this.showSignupComponent = true;
+  }
+
+  onSubmit() {
+    console.log(this.loginForm.value);
+    this.loginDetails = this.loginForm.value as LoginObject;
+    this.userSignIn(this.loginDetails);
   }
 
   userSignIn(loginDetails : LoginObject){
