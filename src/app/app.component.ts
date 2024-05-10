@@ -1,4 +1,4 @@
-import { Component , OnInit , AfterViewInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonService } from './services/common.service';
 
 @Component({
@@ -6,16 +6,11 @@ import { CommonService } from './services/common.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit{
+export class AppComponent{
   title = 'bill-oh';
   flag = false;
   constructor(public commonService: CommonService){
 
-  }
-  ngAfterViewInit(): void {
-    this.flag = this.commonService.getFlagForLogin();
-  }
-  ngOnInit(): void {
   }
 
 }

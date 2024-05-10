@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
 
@@ -7,13 +7,20 @@ import { CommonService } from 'src/app/services/common.service';
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css'],
 })
-export class WelcomeComponent{
-
+export class WelcomeComponent implements OnInit {
   disablebuttons = false;
   showlogin = false;
   loginFlag = new Boolean();
   constructor(private route: Router, private commonService: CommonService) {}
-  
+
+  ngOnInit(): void {
+    this.commonService.flag.subscribe((data) => {
+      this.loginFlag = data;
+      if (this.loginFlag) {
+        this.route.navigate([{ outlets: { HomePage: ['home'] } }]);
+      }
+    });
+  }
 
   showLogin() {
     this.disablebuttons = true;

@@ -19,14 +19,14 @@ const routes: Routes = [
         path:"signup",
         component: SignupComponent,
         outlet: "SignupPage"
+      },
+      {
+        path: "home",
+        component: HomeComponent,
+        outlet: "HomePage"
       }
     ],
   },
-  {
-    path: "home",
-    component: HomeComponent,
-    outlet: "HomePage"
-  }
   
 ];
 

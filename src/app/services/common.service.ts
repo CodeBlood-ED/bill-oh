@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,14 +7,14 @@ import { Injectable } from '@angular/core';
 export class CommonService {
 
   constructor() { }
+  
+  private loggedIn = new BehaviorSubject<Boolean>(false);
+  
+  flag = this.loggedIn.asObservable();
 
-  loggedIn = false;
 
-  public setFlagForLogin(flag:boolean) {
-    this.loggedIn = flag;
+  public setFlagForLogin(value:boolean) {
+    this.loggedIn.next(value);
   }
 
-  public getFlagForLogin() :boolean {
-    return this.loggedIn;
-  }
 }

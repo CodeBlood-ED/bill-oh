@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" *ngIf="!loginFlag">
     <div class="leftpanel">
 
     </div>
@@ -14,4 +14,7 @@
             <router-outlet name="SignupPage"></router-outlet>
         </div>
     </div>
+</div>
+<div *ngIf="loginFlag"> 
+    <router-outlet name="HomePage"></router-outlet>
 </div>

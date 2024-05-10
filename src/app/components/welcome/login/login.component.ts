@@ -43,7 +43,6 @@ export class LoginComponent {
     this.loginDetails = this.loginForm.value as LoginObject;
     //this.userSignIn(this.loginDetails);
     this.commonService.setFlagForLogin(true);
-    this.route.navigate([{ outlets: { HomePage: ['home'] } }]);
   }
 
   userSignIn(loginDetails : LoginObject){
