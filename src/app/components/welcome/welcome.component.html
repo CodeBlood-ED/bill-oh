@@ -1,17 +1,17 @@
 <div class="main">
     <div class="leftpanel">
-        
+
     </div>
     <div class="rightpanel">
-        <div class="buttons" *ngIf="!showLoginComponent && !showSignupComponent">
+        <div class="buttons" *ngIf="!disablebuttons">
             <div id="login" class="primary-button" (click)="showLogin()">Login</div>
             <div id="signup" class="primary-button" (click)="showSignup()">Sign up</div>
         </div>
-        <div *ngIf="showLoginComponent">
-            <app-login></app-login>
+        <div *ngIf="showlogin">
+            <router-outlet name="LoginPage"></router-outlet>
         </div>
-        <div *ngIf="showSignupComponent">
-            <app-signup></app-signup>
+        <div *ngIf="!showlogin">
+            <router-outlet name="SignupPage"></router-outlet>
         </div>
     </div>
 </div>

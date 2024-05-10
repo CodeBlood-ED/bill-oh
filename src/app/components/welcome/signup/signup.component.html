@@ -1,0 +1,15 @@
+<div class="signup" *ngIf="!showLoginPage">
+    <span *ngIf="signUpSuccess">Sign up successful</span>
+    <form class="signup-format" [formGroup]="signupForm" (ngSubmit)="formSubmit()">
+        <span><b>Let us know about you</b></span><br><br>
+        <input type="text" placeholder="Write your name here" formControlName="firstname"> 
+        <input type="text" placeholder="Type your email here" formControlName="email"> 
+        <input type="password" placeholder="Set a password" formControlName="password">  
+        <input type="password" placeholder="Confirm password">   
+        <input type="text" placeholder="Put your mobile number" formControlName="mobile"> 
+
+        
+        <button id="signupbutton" type="submit">Sign up</button><br>
+        <span id="agaa" (click)="routeToLogin()"><b>Already got an account?</b></span>
+    </form>
+</div>

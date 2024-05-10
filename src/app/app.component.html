@@ -1,1 +1,4 @@
-<app-welcome></app-welcome>
+<div *ngIf="!flag">
+    <router-outlet></router-outlet>
+</div>
+<router-outlet name="HomePage"></router-outlet>

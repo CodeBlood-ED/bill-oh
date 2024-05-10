@@ -1,25 +1,28 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  styleUrls: ['./welcome.component.css'],
 })
-export class WelcomeComponent {
+export class WelcomeComponent{
 
-constructor(private route:Router){}
-
-  showLoginComponent: boolean = false;
-  showSignupComponent: boolean = false;
+  disablebuttons = false;
+  showlogin = false;
+  loginFlag = new Boolean();
+  constructor(private route: Router, private commonService: CommonService) {}
+  
 
   showLogin() {
-    this.showLoginComponent = true;
-    this.showSignupComponent = false;
+    this.disablebuttons = true;
+    this.showlogin = true;
+    this.route.navigate([{ outlets: { LoginPage: ['login'] } }]);
   }
 
   showSignup() {
-    this.showSignupComponent = true;
-    this.showLoginComponent = false;
+    this.disablebuttons = true;
+    this.route.navigate([{ outlets: { SignupPage: ['signup'] } }]);
   }
 }

@@ -5,11 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BillTemplateComponent } from './components/bill-template/bill-template.component';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './components/welcome/login/login.component';
+import { SignupComponent } from './components/welcome/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
