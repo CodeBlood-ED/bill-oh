@@ -9,24 +9,22 @@ const routes: Routes = [
   {
     path: "",
     component: WelcomeComponent,
-    children: [
-      {
-        path: 'login',
-        component: LoginComponent,
-        outlet: 'LoginPage',
-      },
-      { 
-        path:"signup",
-        component: SignupComponent,
-        outlet: "SignupPage"
-      },
-      {
-        path: "home",
-        component: HomeComponent,
-        outlet: "HomePage"
-      }
-    ],
   },
+  {
+    path: 'login',
+    component: LoginComponent,
+    outlet: 'LoginPage',
+  },
+  { 
+    path:"signup",
+    component: SignupComponent,
+    outlet: "SignupPage"
+  },
+  {
+    path: "home",
+    component: HomeComponent,
+    outlet: "HomePage"
+  }
   
 ];
 

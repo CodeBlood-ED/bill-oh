@@ -10,26 +10,25 @@ import { CommonService } from 'src/app/services/common.service';
 export class WelcomeComponent implements OnInit {
   disablebuttons = false;
   showlogin = false;
+  showsignup = false;
   loginFlag = new Boolean();
-  constructor(private route: Router, private commonService: CommonService) {}
+  sFlag = new Boolean();
+
+  constructor(private route: Router) {}
 
   ngOnInit(): void {
-    this.commonService.flag.subscribe((data) => {
-      this.loginFlag = data;
-      if (this.loginFlag) {
-        this.route.navigate([{ outlets: { HomePage: ['home'] } }]);
-      }
-    });
+    
   }
 
   showLogin() {
     this.disablebuttons = true;
     this.showlogin = true;
-    this.route.navigate([{ outlets: { LoginPage: ['login'] } }]);
+    this.route.navigate(["/login"]);
   }
 
   showSignup() {
     this.disablebuttons = true;
-    this.route.navigate([{ outlets: { SignupPage: ['signup'] } }]);
+    this.showsignup=true;
+    this.route.navigate(["/signup"]);
   }
 }

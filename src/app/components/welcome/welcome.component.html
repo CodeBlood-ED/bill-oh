@@ -1,4 +1,4 @@
-<div class="main" *ngIf="!loginFlag">
+<div class="main">
     <div class="leftpanel">
 
     </div>
@@ -8,13 +8,10 @@
             <div id="signup" class="primary-button" (click)="showSignup()">Sign up</div>
         </div>
         <div *ngIf="showlogin">
-            <router-outlet name="LoginPage"></router-outlet>
+            <app-login></app-login>
         </div>
-        <div *ngIf="!showlogin">
-            <router-outlet name="SignupPage"></router-outlet>
+        <div *ngIf="showsignup">
+            <app-signup></app-signup>
         </div>
     </div>
-</div>
-<div *ngIf="loginFlag"> 
-    <router-outlet name="HomePage"></router-outlet>
 </div>
