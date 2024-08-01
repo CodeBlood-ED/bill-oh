@@ -23,7 +23,7 @@ export class WelcomeComponent implements OnInit {
   showLogin() {
     this.disablebuttons = true;
     this.showlogin = true;
-    this.route.navigate(["/login"]);
+    this.route.navigate(['login']);
   }
 
   showSignup() {

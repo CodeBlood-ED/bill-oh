@@ -12,18 +12,15 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
-    outlet: 'LoginPage',
+    component: LoginComponent
   },
   { 
     path:"signup",
-    component: SignupComponent,
-    outlet: "SignupPage"
+    component: SignupComponent
   },
   {
     path: "home",
-    component: HomeComponent,
-    outlet: "HomePage"
+    component: HomeComponent
   }
   
 ];

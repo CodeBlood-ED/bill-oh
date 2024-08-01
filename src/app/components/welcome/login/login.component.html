@@ -1,17 +1,11 @@
-<div class="login" *ngIf="!showSignupComponent">
+<div class="login">
     <form class="login-format" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <span><b>For sign in please</b></span><br><br>
+        <p id="fp"><b>For sign in please</b></p>
         <input type="text" placeholder="Type your email here!" formControlName="email">
         <input type="password" placeholder="and password here..." formControlName="password">
 
         <button type="submit" id="loginbutton">Login</button><br>
     </form>
-    <span style="font-size: 14px;">Sign in using</span>
-    <div class="sign-in-options">
-        <span style="font-size: 14px;margin-right: 6px;"><img src="../../../assets/google.png"></span>
-        <span style="font-size: 14px;margin-right: 6px;"><img src="../../../assets/facebook.png"></span>
-        <span style="font-size: 14px;margin-right: 6px;"><img src="../../../assets/twitter.png"></span>
-    </div>
-    <span id="fp"><b>Forgot password?</b></span>
-    <span id="fp"><b>Register here!</b></span>
+    <p id="fp"><b>Forgot password?</b></p>
+    <p id="fp"><b>Register here!</b></p>
 </div>

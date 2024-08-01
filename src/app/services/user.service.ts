@@ -16,11 +16,11 @@ export class UserService {
 
   }
 
-  public fetchUserProfile(loginDetails : LoginObject) : Observable<LoginObject> {
+  public fetchUserProfile(loginDetails : LoginObject) {
     return this.fetchUserProfileHttpInfo(loginDetails);
   }
 
-  private fetchUserProfileHttpInfo(loginDetails: LoginObject): Observable<any> {
+  private fetchUserProfileHttpInfo(loginDetails: LoginObject) {
     const url = this.basepath +"/company/login";
     const headers = new HttpHeaders();
     let params = new HttpParams();

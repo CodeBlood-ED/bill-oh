@@ -1,17 +1,20 @@
 .signup {
-  display: grid;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
   width: 400px;
-  height: 500px;
+  height: 550px;
   font-size: 17px;
   font-family: Poppins;
   align-items: center;
   border: 2px solid black;
   padding: 14px;
   margin: 5px;
-  cursor: pointer;
   background-color: white;
   color: black;
   border-radius: 5px;
+  text-align: center;
 }
 .signup-format {
   display: flex;

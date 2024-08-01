@@ -1,0 +1,27 @@
+<div class="bill-template">
+    <div class="box" id="first_box">
+        <div class="header_section">
+            <ul id="header_items" *ngFor="let header of headers">
+                <li>{{header}}</li>
+            </ul>
+        </div>
+        <div class="bill_section">
+            <div class="product_details">
+                <div> Amul Milk 1Kg Pack</div>
+                <div>70.0</div>
+                <div>1</div>
+                <div>68.0</div>
+            </div>
+        </div>
+        <div class="total">
+            <h3>Total - </h3>
+            <div class="final_price"></div>
+        </div>
+    </div>
+    <div class="box" id="second_box"></div>
+</div>
+<div class="qr_section">
+    <ng-container class="qrcode_scanner">
+        <input id="scanner" type="text" placeholder="Scan Here">
+    </ng-container>
+</div>

@@ -40,12 +40,9 @@ export class LoginComponent {
   onSubmit() {
     console.log(this.loginForm.value);
     this.loginDetails = this.loginForm.value as LoginObject;
-    this.userSignIn(this.loginDetails);
+    this.route.navigate(['/home']);
   }
 
-  userSignIn(loginDetails : LoginObject){
-    this.UserService.fetchUserProfile(loginDetails).subscribe((data:any)=>{
-      this.route.navigate(["/home"]);
-    })
+  userSignIn(){
   }
 }
