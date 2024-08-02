@@ -4,8 +4,17 @@
   top: 60px;
   left: 60px;
 }
-.box {
+.box1 {
   display: block;
+  padding: 2vh;
+  margin-right: 2vh;
+  border-radius: 10px;
+}
+.box2{
+  display:grid;
+  grid-template-columns: 33% 33% 33%;
+  justify-content: center;
+  align-items: center;
   padding: 2vh;
   margin-right: 2vh;
   border-radius: 10px;
@@ -118,4 +127,9 @@ h3 {
     text-align: center;
     top:3px;
     right:5px;
+}
+.add_products{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
+import { product } from 'src/app/models/Product';
+import { HttpClient,HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,22 +9,19 @@ import { Observable } from 'rxjs';
 export class ProductService {
   basepath: string = 'http://localhost:8080';
 
-  constructor(protected http : HttpClient) {
-
+  constructor(private http : HttpClient) {
   }
 
-  public fetchProductDetails(productCode : string) : Observable<Product> {
-    return this.fetchProductDetailsHttpInfo(productCode);
+  public getSearchedProducts(productCode: string) : Observable<product>{
+    return this.getSearchedProductsHttpInfo(productCode);
   }
-
-  public fetchProductDetailsHttpInfo(productCode : string) : Observable<any> {
-
-    const url = this.basepath + '/productdetails';
+  getSearchedProductsHttpInfo(productCode: string): Observable<any> {
+    const url = this.basepath + '/getSearchedProduct';
     let params = new HttpParams();
     params = params.append("productCode", productCode);
 
     const requestOptions = {
-      params,
+      params
     }
 
     return this.http.request('POST', url, requestOptions);
