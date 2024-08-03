@@ -1,11 +1,9 @@
 export class product {
 
-    statuscode! : string;
+    productDescription! : string;
 
-    productName! : string;
+    productMrp! : string;
 
-    productMrp! : number;
-
-    productPrice! : number;
+    productPrice! : string;
     
 }

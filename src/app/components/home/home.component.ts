@@ -25,7 +25,7 @@ export class HomeComponent {
   //  For product search
   searchProduct(productCode: string) {
     this.productService.getSearchedProducts(productCode).subscribe((data:product)=>{
-      return this.products.push(data);
+      this.products.push(data);
     }) 
   }
 }
