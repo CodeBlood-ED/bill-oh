@@ -10,10 +10,11 @@ import { product } from 'src/app/models/product';
 export class HomeComponent {
   headers: string[] = [];
   products: product[] = [];
-  total: string = '0.0';
+  total: number;
 
   constructor(private productService: ProductService) {
     this.headers = ['Product', 'MRP', 'Qty', 'Price'];
+    this.total=0;
   }
   //  Search event triggered
   onSearch(event: KeyboardEvent) {
@@ -26,6 +27,7 @@ export class HomeComponent {
   searchProduct(productCode: string) {
     this.productService.getSearchedProducts(productCode).subscribe((data:product)=>{
       this.products.push(data);
-    }) 
+      this.total+=data.productPrice;
+    });
   }
 }

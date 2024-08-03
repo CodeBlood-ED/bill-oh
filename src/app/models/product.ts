@@ -4,6 +4,6 @@ export class product {
 
     productMrp! : string;
 
-    productPrice! : string;
+    productPrice! : number;
     
 }

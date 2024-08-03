@@ -84,7 +84,7 @@
   display: flex;
   float: right;
 }
-.final_price {
+.final_price_section {
   position: relative;
   top: 10px;
   left: 2px;
@@ -94,6 +94,13 @@
   color: black;
   border: 1px solid black;
   border-radius: 6px;
+}
+#total_price{
+  position:absolute;
+  top:10px;
+  left:40%;
+  font-size:30px;
+
 }
 h3 {
   position: relative;
