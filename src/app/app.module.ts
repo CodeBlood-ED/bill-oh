@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddproductComponent } from './components/addproduct/addproduct.component';
+import { UpdateproductComponent } from './components/updateproduct/updateproduct.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginComponent,
     SignupComponent,
     WelcomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddproductComponent,
+    UpdateproductComponent
   ],
   imports: [
     BrowserModule,

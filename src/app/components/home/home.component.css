@@ -13,6 +13,7 @@
 .box2{
   display:grid;
   grid-template-columns: 33% 33% 33%;
+  gap: 8px;
   justify-content: center;
   align-items: center;
   padding: 2vh;
@@ -26,7 +27,7 @@
 }
 #second_box {
   width: 60vh;
-  height: 70vh;
+  height: 20vh;
   background-color: white;
 }
 .header_section {
@@ -133,10 +134,28 @@ h3 {
     position:relative;
     text-align: center;
     top:3px;
-    right:5px;
+    right:16px;
 }
-.add_products{
+.secondary_options{
+  height:100%;
+  width:100%;
   text-align: center;
+  justify-content: center;
   font-size: 18px;
   font-weight: bold;
+}
+.secondary_options:hover{
+  border:1px solid black;
+}
+.box3{
+  position:relative;
+  width: 60vh;
+  height: 45vh;
+  background-color:white;
+  top:25vh;
+  right:66vh;
+  padding: 2vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }

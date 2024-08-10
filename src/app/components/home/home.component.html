@@ -16,23 +16,35 @@
         <div class="total">
             <h2>Total</h2>
             <div class="final_price_section">
-               <span id="total_price">{{total}}</span>
+                <span id="total_price">{{total}}</span>
             </div>
         </div>
     </div>
     <div class="box2" id="second_box">
-        <a href="/home"><div class="add_products">Add Products</div></a>
-        <div class="add_products">Update Product</div>
-        <div class="add_products">Delete Product</div>
-        <div class="add_products">Billing History</div>
-        <div class="add_products"></div>
-        <div class="add_products"></div>
-        <div class="add_products"></div>
-        <div class="add_products"></div>
+        <div class="secondary_options" id="add_products"
+            (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_PRODUCTS )"> Add Product
+        </div>
+        <div class="secondary_options" (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.UPDATE_PRODUCTS )">
+            Edit Product
+        </div>
+        <div class="secondary_options">Delete Product</div>
+        <div class="secondary_options">Billing History</div>
+        <div class="secondary_options"></div>
+        <div class="secondary_options"></div>
+    </div>
+    <div class="box3">
+        <ng-container [ngSwitch]="currentComponent">
+            <app-addproduct 
+                *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_PRODUCTS ">
+            </app-addproduct>
+            <app-updateproduct
+                *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.UPDATE_PRODUCTS ">
+            </app-updateproduct>
+        </ng-container>
     </div>
 </div>
 <div class="qr_section">
     <ng-container class="qrcode_scanner">
-        <input id="scanner" type="text" placeholder="Scan Here" (keydown)="onSearch($event)">
+        <input id="scanner" type="text" placeholder="Scan Here" (input)="onSearch($event)">
     </ng-container>
 </div>
