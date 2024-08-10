@@ -24,7 +24,8 @@
         <div class="secondary_options" id="add_products"
             (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_PRODUCTS )"> Add Product
         </div>
-        <div class="secondary_options" (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.UPDATE_PRODUCTS )">
+        <div class="secondary_options" 
+            (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.UPDATE_PRODUCTS )">
             Edit Product
         </div>
         <div class="secondary_options">Delete Product</div>
@@ -34,11 +35,9 @@
     </div>
     <div class="box3">
         <ng-container [ngSwitch]="currentComponent">
-            <app-addproduct 
-                *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_PRODUCTS ">
+            <app-addproduct *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_PRODUCTS ">
             </app-addproduct>
-            <app-updateproduct
-                *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.UPDATE_PRODUCTS ">
+            <app-updateproduct *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.UPDATE_PRODUCTS ">
             </app-updateproduct>
         </ng-container>
     </div>

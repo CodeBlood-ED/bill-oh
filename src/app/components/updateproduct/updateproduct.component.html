@@ -1,1 +1,25 @@
-<p>updateproduct works!</p>
+<ng-container>
+    <form [formGroup]="updateProductsForm" class="productForm">
+        <span class="form_name">Edit Product Details</span>
+        <input type="text" 
+            [(ngModel)]="productCode" 
+            formControlName="productCode" 
+            placeholder="Enter product code here"
+            (input)="onSearch($event)">
+        <input type="text" 
+            [(ngModel)]="productDescription" 
+            formControlName="productDescription" 
+            placeholder="Write product name here">
+        <input type="text" 
+            [(ngModel)]="productMrp" 
+            formControlName="productMrp" 
+            placeholder="Enter product Mrp">
+        <input type="text" 
+            [(ngModel)]="productPrice"
+            formControlName="productPrice"
+            placeholder="Enter product price">
+        <div class="button">
+            <button (click)="updateProduct(updateProductsForm)" type="submit">Update</button>
+        </div>
+    </form>
+</ng-container>

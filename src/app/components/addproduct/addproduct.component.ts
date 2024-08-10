@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-addproduct',
@@ -14,5 +16,13 @@ export class AddproductComponent {
     productMrp : new FormControl(),
     productPrice : new FormControl()
   })
+
+  constructor(private productService: ProductService){}
+
+  addProduct(formData: FormGroup){
+    this.productService.addProductInDb(formData).subscribe((data: product)=>{
+      
+    });
+  }
 
 }

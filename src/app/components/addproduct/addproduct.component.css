@@ -4,28 +4,27 @@
   display: grid;
   grid-template-columns: 100%;
   row-gap: 10px;
-  align-items:center;
+  align-items: center;
 }
 input {
-    height: 30px;
+  height: 30px;
   font-family: Poppins;
   text-align: center;
   font-size: 21px;
 }
-.form_name{
-    
-    position: relative;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.form_name {
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
-.button{
-  height:100%;
+.button {
+  height: 100%;
   display: flex;
   position: relative;
-  left:39;
+  left: 39;
 }
-button{
-  padding:20px 40px 20px 40px;
+button {
+  padding: 20px 40px 20px 40px;
 }
