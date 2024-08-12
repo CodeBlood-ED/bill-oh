@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    margin:0;
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Hide any potential overflow */
+    font-family: Poppins;
     background-color: #F3E8EA;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    font-family: Bradley Hand ITC;
+    padding: 0.2rem;
 }

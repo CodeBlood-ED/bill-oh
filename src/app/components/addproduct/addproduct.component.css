@@ -3,11 +3,11 @@
   height: 30%;
   display: grid;
   grid-template-columns: 100%;
-  row-gap: 10px;
+  row-gap: .5rem;
   align-items: center;
 }
 input {
-  height: 30px;
+  height: 50px;
   font-family: Poppins;
   text-align: center;
   font-size: 21px;
@@ -21,10 +21,8 @@ input {
 }
 .button {
   height: 100%;
-  display: flex;
+  display: grid;
+  place-items: center;
   position: relative;
   left: 39;
-}
-button {
-  padding: 20px 40px 20px 40px;
 }

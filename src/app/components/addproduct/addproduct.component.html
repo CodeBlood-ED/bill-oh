@@ -5,8 +5,10 @@
         <input type="text" formControlName="productDescription" placeholder="Write product name here">
         <input type="text" formControlName="productMrp" placeholder="Enter product Mrp">
         <input type="text" formControlName="productPrice" placeholder="Enter product price">
-        <div class="button">
-            <button (click)="addProduct(addProductsForm)" type="submit">Add</button>
-        </div>
+        <button type="button" class="btn btn-success" (click)="addProduct(addProductsForm)">Create product</button>
+        <button type="button" class="btn btn-success" >Reset</button>
+        <button type="button" class="btn btn-danger">
+            Cancel
+        </button>
     </form>
 </ng-container>

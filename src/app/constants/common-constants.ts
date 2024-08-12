@@ -7,6 +7,13 @@ export const COMMON_CONSTANTS = {
 
     VARIABLE_CONSTANTS : {
         ADD_PRODUCTS : "ADD_PRODUCTS",
-        UPDATE_PRODUCTS : "UPDATE_PRODUCTS"
+        UPDATE_PRODUCTS : "UPDATE_PRODUCTS",
+        BILLING_HISTORY : "BILLING_HISTORY"
+    },
+
+    MESSAGES : {
+        PRODUCT_ADDED : "Product has been successfully added",
+        PRODUCT_UPDATED: "Product updated successfully"
     }
+
 }

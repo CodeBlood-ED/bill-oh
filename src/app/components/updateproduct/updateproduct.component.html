@@ -18,8 +18,11 @@
             [(ngModel)]="productPrice"
             formControlName="productPrice"
             placeholder="Enter product price">
-        <div class="button">
-            <button (click)="updateProduct(updateProductsForm)" type="submit">Update</button>
-        </div>
+        
+        <button type="button" class="btn btn-success" (click)="updateProduct(updateProductsForm)">Create product</button>
+        <button type="button" class="btn btn-success" >Reset</button>
+        <button type="button" class="btn btn-danger">
+            Cancel
+        </button>
     </form>
 </ng-container>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { product } from 'src/app/models/product';
 import { COMMON_CONSTANTS } from 'src/app/constants/common-constants';
@@ -16,6 +16,7 @@ export class HomeComponent {
   COMMON_CONSTANTS = COMMON_CONSTANTS;
 
   currentComponent: string = COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_PRODUCTS;
+  @ViewChild('search') search!: ElementRef;
 
   constructor(private productService: ProductService, private router: Router) {
     this.headers = ['Product', 'MRP', 'Qty', 'Price'];
@@ -36,6 +37,7 @@ export class HomeComponent {
       .subscribe((data: product) => {
         this.products.push(data);
         this.total += data.productPrice;
+        this.search.nativeElement.value ='Scan here';
       });
   }
 

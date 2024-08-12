@@ -13,6 +13,10 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddproductComponent } from './components/addproduct/addproduct.component';
 import { UpdateproductComponent } from './components/updateproduct/updateproduct.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { BillingHistoryComponent } from './components/billing-history/billing-history.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { UpdateproductComponent } from './components/updateproduct/updateproduct
     WelcomeComponent,
     NavbarComponent,
     AddproductComponent,
-    UpdateproductComponent
+    UpdateproductComponent,
+    BillingHistoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,10 @@ import { UpdateproductComponent } from './components/updateproduct/updateproduct
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
