@@ -1,7 +1,7 @@
 export class LoginObject {
 
-    email?: string;
+    customerEmail?: string;
 
-    password?: string;
+    customerPwd?: string;
 
 }

@@ -16,17 +16,20 @@ export class UserService {
 
   }
 
-  public fetchUserProfile(loginDetails : LoginObject) {
-    return this.fetchUserProfileHttpInfo(loginDetails);
+  public fetchUserProfile(userEmail:string,userPwd:string) {
+    return this.fetchUserProfileHttpInfo(userEmail,userPwd);
   }
 
-  private fetchUserProfileHttpInfo(loginDetails: LoginObject) {
-    const url = this.basepath +"/company/login";
-    const headers = new HttpHeaders();
+  private fetchUserProfileHttpInfo(userEmail:string,userPwd:string) {
+    const url = this.basepath +"/login";
+    let headers = new HttpHeaders();
     let params = new HttpParams();
 
+    const credentials = btoa(`$(userEmail):$(userPwd)`);
+
+    headers= headers.append("Authorization",`Basic ${credentials}`)
+
     const requestOptions = {
-      body : loginDetails,
       headers,
       params
     }

@@ -1,8 +1,8 @@
 <div class="login">
     <form class="login-format" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <p id="fp"><b>For sign in please</b></p>
-        <input type="text" placeholder="Type your email here!" formControlName="email">
-        <input type="password" placeholder="and password here..." formControlName="password">
+        <input type="text" placeholder="Type your email here!" formControlName="customerEmail">
+        <input type="password" placeholder="and password here..." formControlName="customerPwd">
 
         <button type="submit" id="loginbutton">Login</button><br>
     </form>
