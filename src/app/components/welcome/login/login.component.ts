@@ -34,11 +34,12 @@ export class LoginComponent {
 
   onSubmit() {
     console.log(this.loginForm.value);
-    const userEmail : string = this.loginForm.get('customerEmail')?.value ?? '';
-    const userPwd : string = this.loginForm.get('customerPwd')?.value ?? '';
-    this.UserService.fetchUserProfile(userEmail,userPwd).subscribe((data) => {
-      this.route.navigate(['/home']);
-    });
+    // const userEmail : string = this.loginForm.get('customerEmail')?.value ?? '';
+    // const userPwd : string = this.loginForm.get('customerPwd')?.value ?? '';
+    // this.UserService.fetchUserProfile(userEmail,userPwd).subscribe((data) => {
+    //   this.route.navigate(['/home']);
+    // });
+    this.route.navigate(['/home']);
   }
 
   userSignIn() {}

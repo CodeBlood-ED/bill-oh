@@ -40,7 +40,7 @@ export class UserService {
   }
 
   private userRegistrationHttpInfo(userObject : User) : Observable<any> {
-    const url = this.basepath + "/company/add";
+    const url = this.basepath + "/register";
     const headers = new HttpHeaders();
     let params = new HttpParams();
 

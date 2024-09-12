@@ -2,11 +2,10 @@
     <p *ngIf="signUpSuccess">Sign up successful</p>
     <form class="signup-format" [formGroup]="signupForm" (ngSubmit)="formSubmit()">
         <p><b>Let us know about you</b></p><br>
-        <input type="text" placeholder="Write your name here" formControlName="firstname"> 
-        <input type="text" placeholder="Type your email here" formControlName="email"> 
-        <input type="password" placeholder="Set a password" formControlName="password">  
-        <input type="password" placeholder="Confirm password">   
-        <input type="text" placeholder="Put your mobile number" formControlName="mobile"> 
+        <input type="text" placeholder="Write your name here" formControlName="company_name"> 
+        <input type="text" placeholder="Type your email here" formControlName="company_email"> 
+        <input type="password" placeholder="Set a password" formControlName="password">   
+        <input type="text" placeholder="Put your mobile number" formControlName="company_contact"> 
 
         
         <button id="signupbutton" type="submit">Sign up</button><br>

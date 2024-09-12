@@ -22,10 +22,10 @@ export class SignupComponent {
 
   // sign-up FormGroup declaration
   signupForm = new FormGroup({
-    firstname : new FormControl(),
-    email : new FormControl(),
+    company_name : new FormControl(),
+    company_email : new FormControl(),
     password : new FormControl(),
-    mobile : new FormControl()
+    company_contact : new FormControl()
   });
 
   public constructor(

@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: "billing-history",
     component: BillingHistoryComponent
+  },
+  {
+    path: "**",
+    redirectTo: "login"
   }
   
 ];

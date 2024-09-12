@@ -1,11 +1,11 @@
 export class User {
 
-    firstname ?: string;
+    company_name ?: string;
 
-    email ?: string;
+    company_email ?: string;
 
     password ?: string;
 
-    mobile ?: string;
+    company_contact ?: string;
     
 }
