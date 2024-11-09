@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { BillingHistoryComponent } from './components/billing-history/billing-history.component';
+import { AddsupplierComponent } from './components/addsupplier/addsupplier.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { BillingHistoryComponent } from './components/billing-history/billing-hi
     AddproductComponent,
     UpdateproductComponent,
     BillingHistoryComponent,
+    AddsupplierComponent,
   ],
   imports: [
     BrowserModule,

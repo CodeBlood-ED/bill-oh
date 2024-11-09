@@ -1,6 +1,6 @@
 <div class="signup" *ngIf="!showLoginPage">
     <p *ngIf="signUpSuccess">Sign up successful</p>
-    <form class="signup-format" [formGroup]="signupForm" (ngSubmit)="formSubmit()">
+    <form class="signup-format" [formGroup]="signupForm" (submit)="formSubmit()">
         <p><b>Let us know about you</b></p><br>
         <input type="text" placeholder="Write your name here" formControlName="company_name"> 
         <input type="text" placeholder="Type your email here" formControlName="company_email"> 

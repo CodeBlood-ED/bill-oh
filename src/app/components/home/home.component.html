@@ -47,6 +47,9 @@
             <div class="row row-6">
                 <div class="row grid text-center g-0">
                     <div [ngClass]="'functional_buttons'" class="col-md-4"
+                        (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.REGISTER_SUPPLIER )">Register Supplier
+                    </div>
+                    <div [ngClass]="'functional_buttons'" class="col-md-4"
                         (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_PRODUCTS )">Add product</div>
                     <div [ngClass]="'functional_buttons'" class="col-md-4"
                         (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.UPDATE_PRODUCTS )">Edit product</div>
@@ -57,12 +60,14 @@
             </div>
             <div class="row row-6 mt-5">
                 <ng-container [ngSwitch]="currentComponent" class="component_container">
+                    <app-addsupplier *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.REGISTER_SUPPLIER ">   
+                    </app-addsupplier>
                     <app-addproduct *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_PRODUCTS ">
                     </app-addproduct>
                     <app-updateproduct *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.UPDATE_PRODUCTS ">
                     </app-updateproduct>
-                    <app-billing-history
-                        *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.BILLING_HISTORY"></app-billing-history>
+                    <app-billing-history *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.BILLING_HISTORY">
+                    </app-billing-history>
                 </ng-container>
             </div>
         </div>

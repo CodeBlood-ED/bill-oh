@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders,HttpParams } from '@angular/common/http'
+import { HttpClient,HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
+import { Supplier } from '../models/Supplier';
+import { product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -46,17 +48,37 @@ export class ProductService {
     return this.http.request('PUT', url, requestOptions);
   }
 
-  public addProductInDb(productDetails: FormGroup) : Observable<any>{
+  public addSupplierInDb(supplierDetails: Supplier) : Observable<any>{
+    return this.addSupplierInDbHttpInfo(supplierDetails);
+  }
+  addSupplierInDbHttpInfo(supplierDetails: Supplier) {
+    const url = this.basepath + '/supplier/registersupplier';
+
+    let params = new HttpParams();
+    params = params.append("supplierName", supplierDetails.supplierName);
+    params = params.append("supplierAddress", supplierDetails.supplierAddress);
+    params = params.append("supplierContact", supplierDetails.supplierContact);
+    params = params.append("supplierGST", supplierDetails.supplierGST );
+
+    console.log(params);
+
+    const requestOptions = {
+      params
+    }
+
+    return this.http.request('POST', url, requestOptions);
+  }
+  public addProductInDb(productDetails: product) : Observable<any>{
     return this.addProductInDbHttpInfo(productDetails);
   }
-  addProductInDbHttpInfo(productDetails: FormGroup<any>) {
+  addProductInDbHttpInfo(productDetails: product) {
     const url = this.basepath + '/addProduct';
 
     let params = new HttpParams();
-    params = params.append("productCode", productDetails.value.productCode);
-    params = params.append("productDescription", productDetails.value.productDescription);
-    params = params.append("productMrp", productDetails.value.productMrp);
-    params = params.append("productPrice", productDetails.value.productPrice);
+    params = params.append("productCode", productDetails.productCode);
+    params = params.append("productDescription", productDetails.productDescription);
+    params = params.append("productMrp", productDetails.productMrp);
+    params = params.append("productPrice", productDetails.productPrice);
 
     console.log(params);
 

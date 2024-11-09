@@ -1,0 +1,14 @@
+<ng-container>
+    <form [formGroup]="supplierForm" class="productForm" (submit)="addSupplier()">
+        <span class="form_name">Register Supplier</span>
+        <input type="text" formControlName="supplierName" placeholder="Supplier Name">
+        <input type="text" formControlName="supplierAddress" placeholder="Address">
+        <input type="text" formControlName="supplierContact" placeholder="Mobile no.">
+        <input type="text" formControlName="supplierGST" placeholder="GST Number">
+        <button type="submit" class="btn btn-success">Register</button>
+        <button type="button" class="btn btn-success" >Reset</button>
+        <button type="button" class="btn btn-danger">
+            Cancel
+        </button>
+    </form>
+</ng-container>

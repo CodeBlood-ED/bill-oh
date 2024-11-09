@@ -6,6 +6,10 @@
   row-gap: .5rem;
   align-items: center;
 }
+.productForm select {
+  height:50px;
+  text-align:center;
+}
 input {
   height: 50px;
   font-family: Poppins;
