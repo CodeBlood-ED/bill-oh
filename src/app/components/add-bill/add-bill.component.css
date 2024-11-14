@@ -1,0 +1,7 @@
+*{
+    display:grid;
+}
+.bill_pouch{
+    width:100%;
+    position: absolute;
+}

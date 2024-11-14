@@ -18,6 +18,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { BillingHistoryComponent } from './components/billing-history/billing-history.component';
 import { AddsupplierComponent } from './components/addsupplier/addsupplier.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
+import { AddBillComponent } from './components/add-bill/add-bill.component';
+import { ProductCardComponent } from './components/add-bill/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { AddsupplierComponent } from './components/addsupplier/addsupplier.compo
     UpdateproductComponent,
     BillingHistoryComponent,
     AddsupplierComponent,
+    InventoryComponent,
+    AddBillComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,

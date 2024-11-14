@@ -1,0 +1,12 @@
+<div class="container">
+    <form style="width:100%">
+        <input type="text" [(ngModel)]="product_code" (ngModelChange)="onProductCodeInput()"
+            placeholder="Enter product code" />
+        <select *ngFor="let s of suppliers"></select>
+        <input type="text" placeholder="MRP" />
+        <div class="col row-2" >
+            <input type="text" placeholder="Buying price" />
+            <input type="text" placeholder="Selling price" />
+        </div>
+    </form>
+</div>

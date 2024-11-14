@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpParams } from '@angular/common/http'
+import { HttpClient,HttpHeaders,HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { Supplier } from '../models/Supplier';
@@ -52,7 +52,7 @@ export class ProductService {
     return this.addSupplierInDbHttpInfo(supplierDetails);
   }
   addSupplierInDbHttpInfo(supplierDetails: Supplier) {
-    const url = this.basepath + '/supplier/registersupplier';
+    const url = this.basepath + '/api/supplier/registersupplier';
 
     let params = new HttpParams();
     params = params.append("supplierName", supplierDetails.supplierName);
@@ -72,20 +72,21 @@ export class ProductService {
     return this.addProductInDbHttpInfo(productDetails);
   }
   addProductInDbHttpInfo(productDetails: product) {
-    const url = this.basepath + '/addProduct';
-
-    let params = new HttpParams();
-    params = params.append("productCode", productDetails.productCode);
-    params = params.append("productDescription", productDetails.productDescription);
-    params = params.append("productMrp", productDetails.productMrp);
-    params = params.append("productPrice", productDetails.productPrice);
-
-    console.log(params);
+    const url = this.basepath + '/api/product/addproduct';
+    let productObject: product = productDetails;
 
     const requestOptions = {
-      params
+      body : productObject
     }
 
     return this.http.request('POST', url, requestOptions);
+  }
+  retrieveSuppliersForProductCode(product_code : string) : Observable<Supplier[]>{
+    return this.retrieveSuppliersForProductCodeHttpInfo(product_code);
+  }
+  retrieveSuppliersForProductCodeHttpInfo(product_code: string) : Observable<any> {
+    const suppliers : Supplier[] = [];
+    const url = this.basepath + '/api/supplier/suppliersPerProductCode/{product_code}';
+    return this.http.request("GET",url);
   }
 }

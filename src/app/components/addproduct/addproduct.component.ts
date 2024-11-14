@@ -10,38 +10,41 @@ import { ProductService } from 'src/app/services/product.service';
   selector: 'app-addproduct',
   templateUrl: './addproduct.component.html',
   styleUrls: ['./addproduct.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
-export class AddproductComponent implements OnInit{
-  globalMessage='';
+export class AddproductComponent implements OnInit {
+  globalMessage = '';
 
   addProductsForm = new FormGroup({
+    supplierGST: new FormControl(),
     productCode: new FormControl(),
-    productDescription : new FormControl(),
-    productMrp : new FormControl(),
-    productPrice : new FormControl()
-  })
+    productName: new FormControl(),
+    productMrp: new FormControl(),
+    productPrice: new FormControl(),
+  });
   suppliers: Supplier[] = [];
-  productDetails = new product();
 
-  constructor(private productService: ProductService,
-              private commonService: CommonService
-  ){
-
-  }
+  constructor(
+    private productService: ProductService,
+    private commonService: CommonService
+  ) {}
   ngOnInit() {
-    this.commonService.getSuppliers().subscribe((data:Array<Supplier>) =>{
-      this.suppliers = data;
-    }) 
+    if (this.commonService.getSuppliersFromCache == null) {
+      this.commonService.getSuppliers().subscribe((data: Array<Supplier>) => {
+        this.commonService.setSuppliersForCache(data);
+      });
+    } else {
+      this.suppliers = this.commonService.getSuppliersFromCache();
+    }
   }
 
-  addProduct(){
-    this.productDetails = this.addProductsForm.value as product;
-    this.productService.addProductInDb(this.productDetails).subscribe((data: product)=>{
-      if(data){
-        this.globalMessage = COMMON_CONSTANTS.MESSAGES.PRODUCT_ADDED;
-      }
-    });
+  addProduct() {
+    this.productService
+      .addProductInDb(this.addProductsForm.value as product)
+      .subscribe((data: product) => {
+        if (data) {
+          this.globalMessage = COMMON_CONSTANTS.MESSAGES.PRODUCT_ADDED;
+        }
+      });
   }
-
 }

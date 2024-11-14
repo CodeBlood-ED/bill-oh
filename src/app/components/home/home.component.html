@@ -12,7 +12,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let product of products; let i = index">
+                        <!-- <tr *ngFor="let product of products; let i = index">
                             <td class="col" *ngIf="product.productDescription">{{product.productDescription}}</td>
                             <td class="col" *ngIf="product.productQuantity">
                                 <div class="row d-flex justify-content-center">
@@ -25,7 +25,7 @@
                             </td>
                             <td class="col" *ngIf="product.productMrp">{{product.productMrp}}</td>
                             <td class="col" *ngIf="product.productPrice">{{product.productPrice}}</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -39,7 +39,8 @@
             </div>
             <div class="row row-2">
                 <div class="col-12">
-                    <input type="text" #search placeholder="Scan here" style="width:100%" (input)="onSearch($event)">
+                    <input type="text" #search placeholder="Scan here" style="width:100%">
+                    // (input)="onSearch($event)"
                 </div>
             </div>
         </div>
@@ -56,6 +57,12 @@
                     <div [ngClass]="'functional_buttons'" class="col-md-4"
                         (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.BILLING_HISTORY )">Billing History
                     </div>
+                    <div [ngClass]="'functional_buttons'" class="col-md-4"
+                        (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.INVENTORY )">Inventory
+                    </div>
+                    <div [ngClass]="'functional_buttons'" class="col-md-4"
+                        (click)="navigateTo( COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_BILL )">Add bills
+                    </div>
                 </div>
             </div>
             <div class="row row-6 mt-5">
@@ -68,6 +75,10 @@
                     </app-updateproduct>
                     <app-billing-history *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.BILLING_HISTORY">
                     </app-billing-history>
+                    <app-inventory *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.INVENTORY">
+                    </app-inventory>
+                    <app-add-bill *ngSwitchCase=" COMMON_CONSTANTS.VARIABLE_CONSTANTS.ADD_BILL">
+                    </app-add-bill>
                 </ng-container>
             </div>
         </div>

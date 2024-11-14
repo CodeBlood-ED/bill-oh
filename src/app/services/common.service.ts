@@ -7,7 +7,8 @@ import { Supplier } from '../models/Supplier';
   providedIn: 'root'
 })
 export class CommonService {
-  basepath: string = "http://localhost:8080/supplier";
+  basepath: string = "http://localhost:8080/api/supplier";
+  suppliers = new Array<Supplier>;
 
   constructor(private http : HttpClient) { }
 
@@ -21,6 +22,13 @@ export class CommonService {
       params
     }
     return this.http.request<Array<Supplier>>('GET', url, requestOptions);
+  }
+
+  getSuppliersFromCache() {
+    return this.suppliers;
+  }
+  setSuppliersForCache(suppliers: Supplier[]) {
+    this.suppliers = suppliers;
   }
   
 }

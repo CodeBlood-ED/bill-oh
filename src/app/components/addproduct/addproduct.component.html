@@ -1,17 +1,17 @@
 <ng-container>
     <form [formGroup]="addProductsForm" class="productForm" (submit)="addProduct()">
         <span class="form_name">Add Product</span>
-        <select>
-            <option>Select supplier</option>
-            <option *ngFor="let options of suppliers"
-                value="options.supplierGST">
-                {{options.supplierName}}
+        <select formControlName="supplierGST">
+            <option value="">Select supplier</option>
+            <option *ngFor="let s of suppliers"
+                value="{{s.supplierId}}">
+                {{s.supplierName}}
             </option>
         </select>
         <input type="text" formControlName="productCode" placeholder="Enter product code here">
-        <input type="text" formControlName="productDescription" placeholder="Write product name here">
-        <input type="text" formControlName="productMrp" placeholder="Enter product Mrp">
-        <input type="text" formControlName="productPrice" placeholder="Enter product price">
+        <input type="text" formControlName="productName" placeholder="Write product name here">
+        <input type="number" formControlName="productMrp" placeholder="Enter product Mrp">
+        <input type="number" formControlName="productPrice" placeholder="Enter product price">
         <button type="submit" class="btn btn-success">Create product</button>
         <button type="button" class="btn btn-success">Reset</button>
         <button type="button" class="btn btn-danger">
@@ -19,5 +19,3 @@
         </button>
     </form>
 </ng-container>
-
-<!-- (click)="addProduct(addProductsForm)" -->

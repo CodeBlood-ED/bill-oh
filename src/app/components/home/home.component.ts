@@ -22,31 +22,31 @@ export class HomeComponent {
     this.total = 0;
   }
 
-  onSearch(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const inputLength = input.value.length;
-    if (
-      inputLength > 7 &&
-      !this.products.find(
-        (eachProduct) => eachProduct.productCode === input.value
-      )
-    ) {
-      this.searchProduct(input.value);
-    } else {
-      // If the product exists, increment the quantity
-      this.products = this.products.map((eachProduct) => {
-        if (eachProduct.productCode === input.value) {
-          return {
-            ...eachProduct,
-            productQuantity: eachProduct.productQuantity + 1,
-          }; 
-        } else {
-          return eachProduct;
-        }
-      });
-      this.search.nativeElement.value = '';
-    }
-  }
+  // onSearch(event: Event) {
+  //   const input = event.target as HTMLInputElement;
+  //   const inputLength = input.value.length;
+  //   if (
+  //     inputLength > 7 &&
+  //     !this.products.find(
+  //       (eachProduct) => eachProduct.productCode === input.value
+  //     )
+  //   ) {
+  //     this.searchProduct(input.value);
+  //   } else {
+  //     // If the product exists, increment the quantity
+  //     this.products = this.products.map((eachProduct) => {
+  //       if (eachProduct.productCode === input.value) {
+  //         return {
+  //           ...eachProduct,
+  //           productQuantity: eachProduct.productQuantity + 1,
+  //         }; 
+  //       } else {
+  //         return eachProduct;
+  //       }
+  //     });
+  //     this.search.nativeElement.value = '';
+  //   }
+  // }
   //  For product search
   searchProduct(productCode: string) {
     this.productService

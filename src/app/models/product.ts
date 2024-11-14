@@ -1,12 +1,12 @@
 export class product {
+    supplierId! : string;
+
     productCode! : string;
 
-    productDescription! : string;
+    productName! : string;
 
-    productMrp! : string;
+    productMrp! : number;
 
     productPrice! : number;
-
-    productQuantity! : number;
     
 }

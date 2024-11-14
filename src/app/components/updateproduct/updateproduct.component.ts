@@ -26,16 +26,16 @@ export class UpdateproductComponent{
   constructor(private productService: ProductService){
 
   }
-  onSearch(event: Event) {
-    const input = event.target as HTMLInputElement;
-    if(input.value.length > 7) {
-      this.productService.getSearchedProducts(this.productCode).subscribe((data: product)=>{
-        this.productDescription=data.productDescription;
-        this.productMrp=data.productMrp;
-        this.productPrice=data.productPrice;
-      })
-    }
-  }
+  // onSearch(event: Event) {
+  //   const input = event.target as HTMLInputElement;
+  //   if(input.value.length > 7) {
+  //     this.productService.getSearchedProducts(this.productCode).subscribe((data: product)=>{
+  //       this.productDescription=data.productDescription;
+  //       this.productMrp=data.productMrp;
+  //       this.productPrice=data.productPrice;
+  //     })
+  //   }
+  // }
   updateProduct(formdata: FormGroup){
     this.productService.updateProductDetails(formdata).subscribe((data:any)=>{
       
