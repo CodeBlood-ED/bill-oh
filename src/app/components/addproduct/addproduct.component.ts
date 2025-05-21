@@ -29,13 +29,10 @@ export class AddproductComponent implements OnInit {
     private commonService: CommonService
   ) {}
   ngOnInit() {
-    if (this.commonService.getSuppliersFromCache == null) {
-      this.commonService.getSuppliers().subscribe((data: Array<Supplier>) => {
-        this.commonService.setSuppliersForCache(data);
-      });
-    } else {
+    this.commonService.getSuppliers().subscribe((data: Array<Supplier>) => {
+      this.commonService.setSuppliersForCache(data);
       this.suppliers = this.commonService.getSuppliersFromCache();
-    }
+    });
   }
 
   addProduct() {
